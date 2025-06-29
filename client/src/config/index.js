@@ -58,11 +58,12 @@ export const addProductFormElements = [
     name: "category",
     componentType: "select",
     options: [
-      { id: "men", label: "Men" },
-      { id: "women", label: "Women" },
-      { id: "kids", label: "Kids" },
-      { id: "accessories", label: "Accessories" },
-      { id: "footwear", label: "Footwear" },
+      { id: "Poultry", label: "Poultry" },
+      { id: "Meat", label: "Meat" },
+      { id: "Fish", label: "Fish" },
+      { id: "Vegetables", label: "Vegetables" },
+      { id: "Egg", label: "Egg" },
+     
     ],
   },
   {
@@ -113,28 +114,28 @@ export const shoppingViewHeaderMenuItems = [
     path: "/shop/listing",
   },
   {
-    id: "men",
-    label: "Men",
+    id: "Poultry",
+    label: "Poultry",
     path: "/shop/listing",
   },
   {
-    id: "women",
-    label: "Women",
+    id: "Meat",
+    label: "Meat",
     path: "/shop/listing",
   },
   {
-    id: "kids",
-    label: "Kids",
+    id: "Fish",
+    label: "Fish",
     path: "/shop/listing",
   },
   {
-    id: "footwear",
-    label: "Footwear",
+    id: "Egg",
+    label: "Egg",
     path: "/shop/listing",
   },
   {
-    id: "accessories",
-    label: "Accessories",
+    id: "Vegetables",
+    label: "Vegetables",
     path: "/shop/listing",
   },
   {
@@ -145,11 +146,11 @@ export const shoppingViewHeaderMenuItems = [
 ];
 
 export const categoryOptionsMap = {
-  men: "Men",
-  women: "Women",
-  kids: "Kids",
-  accessories: "Accessories",
-  footwear: "Footwear",
+  Poultry: "Pultry",
+  Meat: "Meat",
+  Fish: "Fish",
+  Egg: "Egg",
+  Vegetables: "Vegetables",
 };
 
 export const brandOptionsMap = {
@@ -163,11 +164,11 @@ export const brandOptionsMap = {
 
 export const filterOptions = {
   category: [
-    { id: "men", label: "Men" },
-    { id: "women", label: "Women" },
-    { id: "kids", label: "Kids" },
-    { id: "accessories", label: "Accessories" },
-    { id: "footwear", label: "Footwear" },
+    { id: "Poultry", label: "Poultry" },
+    { id: "Meat", label: "Meat" },
+    { id: "Fish", label: "Fish" },
+    { id: "Egg", label: "Egg" },
+    { id: "Vegetables", label: "Vegetables" },
   ],
   brand: [
     { id: "nike", label: "Nike" },

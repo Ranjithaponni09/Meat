@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
-import bannerOne from "../../assets/banner-1.webp";
-import bannerTwo from "../../assets/banner-2.webp";
-import bannerThree from "../../assets/banner-3.webp";
+
+import Poultry from "../../assets/11.jpeg";
+import Meat from "../../assets/12.jpeg";
+import Fish from "../../assets/13.jpeg";
+import Egg from"../../assets/14.jpeg";
+import Vegetables  from"../../assets/15.jpg";
+
 import {
   Airplay,
   BabyIcon,
@@ -32,11 +36,11 @@ import ProductDetailsDialog from "@/components/shopping-view/product-details";
 import { getFeatureImages } from "@/store/common-slice";
 
 const categoriesWithIcon = [
-  { id: "men", label: "Men", icon: ShirtIcon },
-  { id: "women", label: "Women", icon: CloudLightning },
-  { id: "kids", label: "Kids", icon: BabyIcon },
-  { id: "accessories", label: "Accessories", icon: WatchIcon },
-  { id: "footwear", label: "Footwear", icon: UmbrellaIcon },
+  { id: "Poultry", label: "Poultry", img:Poultry},
+  { id: "Meat", label: "Meat", img:Meat },
+  { id: "Fish", label: "Fish", img:Fish },
+  { id: "Egg", label: "Egg", img:Egg },
+  { id: "Vegetables", label: "Vegetables", img: Vegetables },
 ];
 
 const brandsWithIcon = [
@@ -161,30 +165,54 @@ function ShoppingHome() {
           <ChevronRightIcon className="w-4 h-4" />
         </Button>
       </div>
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">
-            Shop by category
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {categoriesWithIcon.map((categoryItem) => (
-              <Card
-                onClick={() =>
-                  handleNavigateToListingPage(categoryItem, "category")
-                }
-                className="cursor-pointer hover:shadow-lg transition-shadow"
-              >
-                <CardContent className="flex flex-col items-center justify-center p-6">
-                  <categoryItem.icon className="w-12 h-12 mb-4 text-primary" />
-                  <span className="font-bold">{categoryItem.label}</span>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      
+ <section className="py-12 bg-gray-50">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-bold text-center mb-8">
+      Shop by category
+    </h2>
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      {categoriesWithIcon.map((categoryItem) => (
+        <Card
+          onClick={() =>
+            handleNavigateToListingPage(categoryItem, "category")
+          }
+          className="group cursor-pointer hover:shadow-lg hover:scale-105 transform transition-transform duration-300 overflow-hidden"
+          key={categoryItem.id}
+        >
+          <CardContent className="relative p-0 h-48">
+            {categoryItem.img ? (
+              <>
+                <img
+                  src={categoryItem.img}
+                  alt={categoryItem.label}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0  bg-opacity-40 flex items-center justify-center transition-all duration-300 group-hover:translate-y-[-10px]">
+                  <span className="text-white font-bold text-lg text-center">
+                    {categoryItem.label}
+                  </span>
+                </div>
+              </>
+            ) : (
+              <div className="w-full h-full flex flex-col items-center justify-center bg-gray-200">
+                <categoryItem.icon className="w-12 h-12 text-gray-600" />
+                <span className="font-bold mt-2 text-center">
+                  {categoryItem.label}
+                </span>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
 
-      <section className="py-12 bg-gray-50">
+
+
+
+      <section className="py-12 bg-gray-100">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">Shop by Brand</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
